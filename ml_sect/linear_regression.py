@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 
 
-class MyLinearRegression:
+class LinearRegression:
     def __init__(self, fit_intercept: bool = True):
         self.fit_intercept = fit_intercept
 
@@ -19,7 +19,7 @@ class MyLinearRegression:
 
         return self
 
-    def predict(self, X: pd.DataFrame):
+    def predict(self, X: pd.DataFrame) -> pd.DataFrame:
         n, k = X.shape
         if self.fit_intercept:
             X_train = np.hstack((X, np.ones((n, 1))))
@@ -28,5 +28,3 @@ class MyLinearRegression:
 
         return y_pred
 
-    def get_weights(self) -> pd.DataFrame:
-        return self.w

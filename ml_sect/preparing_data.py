@@ -6,6 +6,11 @@ from sklearn.preprocessing import LabelEncoder
 
 
 def prepare_df(df: pd.DataFrame) -> Tuple[pd.DataFrame, pd.DataFrame]:
+    """
+        Selecting numeric and categorical features from data.
+        Transformation of lognormal features.
+        Using Label Encoder.
+    """
     num_features = []
     cat_features = []
     for column in df:

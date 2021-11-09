@@ -3,16 +3,16 @@ import numpy as np
 import pandas as pd
 from sklearn.metrics import mean_squared_error
 
-from ml_sect.MyLinearRegression import MyLinearRegression
+from linear_regression import LinearRegression
 
 
-class MyGradientLinearRegression(MyLinearRegression):
+class GradientLinearRegression(LinearRegression):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.losses = []
         self.w = None
 
-    def fit(self, X, y, lr: float = 0.0001, max_iter: int = 100) -> "MyGradientLinearRegression":
+    def fit(self, X, y, lr: float = 0.0001, max_iter: int = 100) -> "GradientLinearRegression":
         # Принимает на вход X, y и вычисляет веса по данной выборке
 
         n, k = X.shape
@@ -35,7 +35,7 @@ class MyGradientLinearRegression(MyLinearRegression):
         return self
 
     @staticmethod
-    def _calc_gradient(X: pd.DataFrame, y: pd.DataFrame, y_pred: pd.DataFrame) -> int:
+    def _calc_gradient(X: pd.DataFrame, y: pd.DataFrame, y_pred: pd.DataFrame) -> pd.DataFrame:
         grad = 2 * (y_pred - y)[:, np.newaxis] * X
         grad = grad.mean(axis=0)
         return grad
