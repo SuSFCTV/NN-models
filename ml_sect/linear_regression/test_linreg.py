@@ -1,6 +1,6 @@
 import unittest
 
-from score_model import score_model
+from ml_sect.linear_regression.score_model import score_model
 
 
 class TestLinearRegression(unittest.TestCase):

@@ -1,9 +1,8 @@
-from gradient_linear_regression import GradientLinearRegression
+from ml_sect.linear_regression.linear_regression import GradientLinearRegression
 import pandas as pd
 from sklearn.model_selection import train_test_split
-from preparing_data import prepare_df
+from ml_sect.linear_regression.preparing_data import prepare_df
 from sklearn.metrics import mean_squared_error
-from sklearn.metrics import mean_absolute_percentage_error
 
 
 def score_model(data: pd.DataFrame) -> float:
